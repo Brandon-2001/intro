@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction</title>
+    <link rel="stylesheet" href='{% static "/home/styles.css" %}?{% now "U" %}'>
+    <script src="https://unpkg.com/htmx.org@2.0.2" integrity="sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vji+VSeHOThJ" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <a class="button" href=# hx-get="" hx-target="body" hx-swap="outerHTML transition:true">Home</a>
+    <a class="button" href=# hx-get="{% url 'project' %}" hx-target="body" hx-swap="outerHTML transition:true">This Project</a>
+    <a class="button" href=# hx-get="{% url 'resume' %}" hx-target="body" hx-swap="outerHTML transition:true">About Me</a>
+    {% block content %}
+
+    {% endblock %}
+
+</body>
+
+</html>

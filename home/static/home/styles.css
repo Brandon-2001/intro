@@ -1,0 +1,165 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2F4F4F;
+    font-family: 'Roboto';
+    height: 15vh;
+    gap: 100px;
+}
+
+a {
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 3px;
+    height: 30px;
+    width: 150px;
+    line-height: 35px;
+    position: relative;
+    text-align: center;
+    color: white;
+    left: -360px;
+    top: -25px;
+}
+
+a:before {
+    content: "";
+    position: absolute;
+    height: 60px;
+    width: 150px;
+    top: -15px;
+    left: 0px;
+    border-left: 2px solid grey;
+    border-right: 2px solid white;
+    transition: all 0.5s;
+}
+
+a:after {
+    content: "";
+    position: absolute;
+    height: 30px;
+    width: 180px;
+    top: 0px;
+    left: -12px;
+    border-top: 2px solid white;
+    border-bottom: 2px solid grey;
+    transition: all 0.5s;
+    transition-delay:  0.2s;
+}
+
+a:hover:before {
+    transform: rotateY(180deg);
+}
+
+a:hover:after {
+    transform: rotateX(180deg);
+}
+
+@keyframes fade-in {
+from { opacity: 0; }
+}
+
+@keyframes fade-out {
+to { opacity: 0; }
+}
+
+@keyframes slide-from-bottom {
+from { transform: translateY(250px); }
+}
+
+@keyframes slide-to-top {
+to { transform: translateY(-180px); }
+}
+
+::view-transition-old(slide-it) {
+animation: 300ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+600ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-top;
+}
+::view-transition-new(slide-it) {
+animation: 300ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+900ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-bottom;
+}
+
+.transition {
+view-transition-name: slide-it;
+}
+
+.content{
+    top: 25vh;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    color: white;
+}
+
+#house {
+    position: absolute;
+    left: -150%; 
+    top: 220px; 
+    margin: 0;
+}
+
+#campfire {
+    position: absolute;
+    left: -135px;
+    top: 370px;
+    margin: 0;
+
+    /* Apply the keyframe animation */
+    animation: flips 1s steps(1) infinite;
+    transform-style: preserve-3d; /* Ensures the backface is hidden during the flip */
+}
+
+@keyframes flips {
+    0% {
+        transform: rotateY(0deg);
+    }    
+    50% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+.title {
+    color: white;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    right: -250px;
+    top: -25px;
+    text-align: center;
+    width: 350px;
+}
+
+.subtext {
+    color: white;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -450x;
+    right: -250px;
+    font-size: 20px;
+    width: 350px;
+    text-align: center;
+}
+
+#book {
+    position: absolute;
+    left: -125%;
+    top: 35px;
+    margin: 0;
+}
+
+#profilepic {
+    position: absolute;
+    left: -75%;
+    top: 35px;
+    margin: 0;
+    width: 250px;
+    border-radius: 50%;
+}

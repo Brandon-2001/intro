@@ -1,0 +1,17 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="transition content">
+<img id="book" src="{% static 'home/images/book.svg' %}" alt="book">
+<h1 class="title">In Retrospect</h1>
+
+<p class="subtext">I created this website using Django and HTMX. Many challenges arose from beginner mistakes. This includes
+    setting the project up in a global environment which caused many dependency issues. Another error was not keeping a clean codebase which is a common mistake
+    when using HTMX, as everything is built within the same application to allow for smoother transitions. It's purely front-end. 
+    Expect future projects to have added layers of complexity, as well as functionality.</p>
+
+</div>
+
+{% endblock %}
